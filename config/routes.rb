@@ -6,13 +6,15 @@ Rails.application.routes.draw do
    #root 'contacts#index'
 
 #get  '/tops/last'                  => 'top#last'
-   get  '/'                      => 'contacts#index'
-   get  '/contacts/new'          => 'contacts#new'
-   post '/contacts'              => 'contacts#create'
-   get '/contacts/:id/edit'      => 'contacts#edit'
-   get '/contacts/:id'           => 'contacts#show'
-   patch '/contacts/:id'         => 'contacts#update'
-   delete '/contacts/:id'        => 'contacts#delete'
+   get  '/'                           => 'contacts#index'
+   get  '/contacts/new'               => 'contacts#new'
+   post '/contacts'                   => 'contacts#create'
+   get '/contacts/:id/edit'           => 'contacts#edit'
+   get '/contacts/:id'                => 'contacts#show'
+   patch '/contacts/:id'              => 'contacts#update'
+   patch '/contacts/:id/change_flag'  => 'contacts#change_flag'
+   delete '/contacts/:id'             => 'contacts#delete'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

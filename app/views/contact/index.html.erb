@@ -4,7 +4,7 @@
   <h1> My contacts </h1>
 
   <table class = "table table-bordered">
-    <caption> 3 resultas trouvés </caption>
+    <caption> <%= @nb_contacts %> <% if @nb_contacts > 1 %> contacts trouvés <% else %> contact trouvé <% end %>  </caption>
 
     <thead>
     <tr>
@@ -44,9 +44,15 @@
               <span class="glyphicon glyphicon-remove"></span>
           <% end %>
         </td>
-        <td class="text-center">
-          <img src="black-star.png"/>
-        </td>
+      <td class="text-center">
+        <%= link_to '/contacts/'+contact.id.to_s+'/change_flag', method: :patch do %>
+            <% if contact.flag.blank? || contact.flag == false %>
+                <img src="black-star.png"/>
+            <% else %>
+                <img src="yellow-star.png"/>
+            <% end %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
     </tbody>

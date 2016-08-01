@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
+    @nb_contacts = Contact.nb_contacts
     render template: 'contact/index'
   end
 
@@ -63,6 +64,27 @@ class ContactsController < ApplicationController
         redirect_to action: "index",notice: 'contact was successfully updated.'
       else
         render 'edit'
+      end
+    rescue Exception => e
+      render :status => :internal_server_error, :json => e.message
+    end
+  end
+
+  def change_flag
+    begin
+      contact_id = params[:id]
+
+      @contact = Contact.find(contact_id)
+      if @contact.flag.blank? || @contact.flag == false
+        result = @contact.update(:flag => true)
+      else
+        result = @contact.update(:flag => false)
+      end
+
+      if result
+        redirect_to action: "index",notice: 'contact flag was successfully updated.'
+      else
+        render_error "change_flag_error", del_contact.errors.full_messages
       end
     rescue Exception => e
       render :status => :internal_server_error, :json => e.message
