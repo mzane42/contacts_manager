@@ -21,17 +21,17 @@ class ContactsController < ApplicationController
   end
 =end
 
+  def new
+    @new_contact = Contact.new(params[:contact])
+    render template: 'contact/new'
+  end
+
   def create
     begin
-      first_name = (params[:first_name]) ? params[:first_name] : nil
-      last_name = (params[:last_name]) ? params[:last_name] : nil
-      email = (params[:email]) ? params[:email] : nil
-      phone = (params[:phone]) ? params[:phone] : nil
-      address = (params[:address]) ? params[:address] : nil
+      @new_contact = Contact.new(contact_params)
+      result = @new_contact.save
 
-      new_contact = Contact.new(first_name: first_name, last_name: last_name, email: email, phone: phone, address: address)
-      result = new_contact.save
-
+      puts result
 
       if result
         redirect_to action: "index",notice: 'contact was successfully created.'
@@ -43,10 +43,11 @@ class ContactsController < ApplicationController
     end
   end
 
-
-
   def index
     render template: 'contact/index'
   end
 
+  def contact_params
+    params.require(:contact).permit(:first_name, :last_name, :phone, :address, :email)
+  end
 end

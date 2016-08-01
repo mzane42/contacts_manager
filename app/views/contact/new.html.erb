@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "new" %>
+
+<div class="container-contact">
+
+  <%=  form_for @new_contact, :as => :contact, :url => contacts_create_path(@new_contact)  do |f| %>
+
+      <h3 style="margin-bottom: 25px; text-align: center;">Nouveau contact :</h3>
+
+      <div class="form-group">
+        <%= f.label :Prenom %><br>
+        <%= f.text_field :first_name, class: "form-control" , :autocomplete => :off%>
+      </div>
+      <div class="form-group">
+        <%= f.label :Nom %><br>
+        <%= f.text_field :last_name, class: "form-control", :autocomplete => :off %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Telephone %><br>
+        <%= f.text_field :phone, class: "form-control", :autocomplete => :off %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Email %><br>
+        <%= f.text_field :email, class: "form-control", :autocomplete => :off %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Adresse  %><br>
+        <%= f.text_field :address, class: "form-control", :autocomplete => :off %>
+      </div>
+      <div class="form-group valid-btn-wrapper">
+        <%= f.submit "Submit", class: "btn btn-lg btn-primary valid-btn" %>
+      </div>
+  <% end %>
+</div>

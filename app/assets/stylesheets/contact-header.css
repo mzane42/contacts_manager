@@ -44,5 +44,6 @@
 
 .header-new-contact {
     float: right;
-    margin: 20px;
+    display: inline-block;
+    margin: 12px;
 }
