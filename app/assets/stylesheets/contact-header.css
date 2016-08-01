@@ -1,0 +1,48 @@
+
+
+.header-fixed {
+    height: 80px;
+}
+
+
+
+.super-header {
+    position: relative;
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color:#FFFFFF;
+    height: 100%;
+    padding: 12px 20px 12px 20px;
+    border-width: 0px 0px 3px;
+    border-style: solid;
+    -moz-border-image: -moz-linear-gradient(left, #FF6B49 0%, #FFD83F 100%);
+    -webkit-border-image: -webkit-linear-gradient(left, #FF6B49 0%, #FFD83F 100%);
+    border-image: linear-gradient(to right, #FF6B49 0%, #FFD83F 100%);
+    border-image-slice: 1;
+}
+
+.header-logo {
+    display: inline-block;
+    width: 40%;
+}
+
+.header-logo img {
+    height: 40px;
+    float:left;
+    margin: 7px;
+}
+
+.header-baseline {
+    margin: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.header-new-contact {
+    float: right;
+    margin: 20px;
+}

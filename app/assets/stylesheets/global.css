@@ -1,0 +1,66 @@
+html, body {
+    max-width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body
+{
+    background-color:#f2f2f2;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.015em;
+}
+
+button {
+    outline: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border:none;
+    min-width: 80px;
+}
+
+a {
+    font-weight: bold;
+    color: #da092e;
+
+}
+
+a:hover {
+    color: #e34700;
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #da092e;
+}
+
+h1 {
+    font-size: 20px;
+    color: #494949;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #494949;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+textarea {
+    resize: none;
+}
+
+.container-contact {
+    position: relative;
+    max-width: 1024px;
+    height: 100%;
+    padding: 20px 20px 20px 20px;
+    margin: 30px auto;
+    background: #FFFFFF;
+}
