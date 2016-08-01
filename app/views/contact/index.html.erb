@@ -4,7 +4,7 @@
   <h1> My contacts </h1>
 
   <table class = "table table-bordered">
-    <caption>Clicker sur le contact pour afficher plus de details</caption>
+    <caption> 3 resultas trouvés </caption>
 
     <thead>
     <tr>
@@ -18,34 +18,40 @@
     </thead>
 
     <tbody>
+    <%
+      nb_contact = 0
+      @contacts.each do |contact|
+        if !contact
+          break
+        end
+        nb_contact += 1
+    %>
     <tr>
-      <td class="text-center"><img src="user-default.png"/></td>
-      <td>anis</td>
-      <td>zane</td>
-      <td>5600010293</td>
-      <td class="text-center"><a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a> <a class='btn btn-warning btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a></td>
-      <td class="text-center"><img src="black-star.png"/></td>
+        <td class="text-center">
+          <img src="user-default-S.png"/>
+        </td>
+        <td><%= contact.first_name %></td>
+        <td> <%= contact.last_name %> </td>
+        <td> <%= contact.phone %></td>
+        <td class="text-center">
+          <%= link_to '/contacts/'+contact.id.to_s, :class => "btn btn-primary btn-xs" do %>
+              <span class="glyphicon glyphicon-eye-open"></span>
+          <% end %>
+          <%= link_to '/contacts/'+ contact.id.to_s+'/edit', :class => "btn btn-warning btn-xs" do %>
+              <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+          <%= link_to '/contacts/'+ contact.id.to_s ,method: :delete, :class => "btn btn-danger btn-xs" do %>
+              <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <img src="black-star.png"/>
+        </td>
     </tr>
-
-    <tr>
-      <td class="text-center"><img src="user-default.png"/></td>
-      <td>julian</td>
-      <td>lecalvez</td>
-      <td>40000333</td>
-      <td class="text-center"><a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a> <a class='btn btn-warning btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a></td>
-      <td class="text-center"><img src="black-star.png"/></td>
-    </tr>
-
-    <tr>
-      <td class="text-center"><img src="user-default.png"/></td>
-      <td>hugo</td>
-      <td>sbordon</td>
-      <td>4110273</td>
-      <td class="text-center"><a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a> <a class='btn btn-warning btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a></td>
-      <td class="text-center"><img src="yellow-star.png"/></td>
-    </tr>
-
+    <% end %>
     </tbody>
+
+
 
   </table>
 </div>

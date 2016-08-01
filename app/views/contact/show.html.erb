@@ -1,0 +1,51 @@
+<%= stylesheet_link_tag "show" %>
+<div class="container-contact">
+
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 " align="center">
+            <img alt="User Pic" src="user-default-XL.png" class="img-circle img-responsive"> </div>
+
+          <div class=" col-md-9 col-lg-9 ">
+            <table class="table table-user-information">
+              <tbody>
+              <tr>
+                <td>Prenom : </td>
+                <td><%= @contact.first_name %></td>
+              </tr>
+              <tr>
+                <td>Nom : </td>
+                <td><%= @contact.last_name %></td>
+              </tr>
+              <tr>
+                <td>Telephone : </td>
+                <td><%= @contact.phone %></td>
+              </tr>
+              <tr>
+                <td>Email : </td>
+                <td><%= @contact.email %></td>
+              </tr>
+              <tr>
+                <td>Adresse : </td>
+                <td><%= @contact.address%></td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="export-btn-wrapper">
+      <button class="btn btn-primary"> Exporter en PDF </button>
+      <%= link_to '/contacts/'+ @contact.id.to_s+'/edit', :class => "btn btn-warning" do %>
+          <span class="glyphicon glyphicon-edit"> Editer </span>
+      <% end %>
+      <%= link_to '/contacts/'+ @contact.id.to_s ,method: :delete, :class => "btn btn-danger" do %>
+          <span class="glyphicon glyphicon-remove"> Supprimer </span>
+      <% end %>
+    </div>
+
+</div>
