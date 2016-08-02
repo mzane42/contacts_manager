@@ -6,7 +6,7 @@ The app include the following:
 
 - Upload photos for contacts. 
 
-- Flag a contact. 
+- Tag a contact. 
 
 - Export contact as pdf
 
