@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  prawnto :prawn => { :top_margin => 75 }
+
   def index
     @contacts = Contact.all
     @nb_contacts = Contact.nb_contacts
