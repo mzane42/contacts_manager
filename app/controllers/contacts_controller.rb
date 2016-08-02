@@ -1,12 +1,23 @@
 class ContactsController < ApplicationController
+ # margin-top on pdf
   prawnto :prawn => { :top_margin => 75 }
+=begin
+  contacts_new GET    /contacts/new(.:format)             contacts#new
+  contacts POST   /contacts(.:format)                 contacts#create
+             GET    /contacts/:id/edit(.:format)        contacts#edit
+  PATCH  /contacts/:id(.:format)             contacts#update
+  PATCH  /contacts/:id/change_flag(.:format) contacts#change_flag
+  DELETE /contacts/:id(.:format)             contacts#delete
+=end
 
+  #  GET   '/'
   def index
     @contacts = Contact.all
     @nb_contacts = Contact.nb_contacts
     render template: 'contact/index'
   end
 
+  # GET   '/contacts/:id'
   def show
     contact_id = params[:id]
 
@@ -14,11 +25,13 @@ class ContactsController < ApplicationController
     render template: 'contact/show'
   end
 
+  # GET   '/contacts/new'
   def new
     @contact = Contact.new(params[:contact])
     render template: 'contact/new'
   end
 
+  # POST '/contacts'
   def create
     begin
       @contact = Contact.new(contact_params)
@@ -34,6 +47,7 @@ class ContactsController < ApplicationController
     end
   end
 
+  # DELETE '/contacts/:id'
   def delete
     begin
       contact_id = params[:id]
@@ -56,6 +70,7 @@ class ContactsController < ApplicationController
     render template: 'contact/edit'
   end
 
+  #PATCH  '/contacts/:id'
   def update
     begin
       contact_id = params[:id]
@@ -72,6 +87,7 @@ class ContactsController < ApplicationController
     end
   end
 
+  #PATCH '/contacts/:id/change_flag'
   def change_flag
     begin
       contact_id = params[:id]
@@ -93,6 +109,7 @@ class ContactsController < ApplicationController
     end
   end
 
+  # protect parameters
   def contact_params
     params.require(:contact).permit(:first_name, :last_name, :phone, :address, :email, :image)
   end

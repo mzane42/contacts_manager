@@ -1,8 +1,8 @@
-<%= stylesheet_link_tag "edit" %>
+<%= stylesheet_link_tag "form" %>
 
 <div class="container-contact">
-  <h3 style="margin-bottom: 25px; text-align: center;">Editer le contact :</h3>
+  <h3 class="form-title">Editer le contact :</h3>
   <%=  form_for @contact, :as => :contact, :url => '/contacts/'+params[:id], :html => {:multipart => true}  do |f| %>
-    <%= render "components/contact_form",f: f%>
+    <%= render "components/contact_form",f: f %>
   <% end %>
 </div>

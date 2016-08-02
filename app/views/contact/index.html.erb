@@ -1,19 +1,19 @@
 <%= stylesheet_link_tag "index" %>
 
 <div class="container-contact">
-  <h1> My contacts </h1>
+  <h1> Mes contacts </h1>
 
   <table class = "table table-bordered">
     <caption> <%= @nb_contacts %> <% if @nb_contacts > 1 %> contacts trouvés <% else %> contact trouvé <% end %>  </caption>
 
     <thead>
     <tr>
-      <th class="text-center">photo</th>
-      <th class="text-center">nom</th>
-      <th class="text-center">prenom</th>
-      <th class="text-center">phone</th>
+      <th class="text-center">Photo</th>
+      <th class="text-center">Nom</th>
+      <th class="text-center">Prenom</th>
+      <th class="text-center">Telephone</th>
       <th class="text-center">Action</th>
-      <th class="text-center"> Flag </th>
+      <th class="text-center">Tag</th>
     </tr>
     </thead>
 
@@ -60,8 +60,5 @@
     </tr>
     <% end %>
     </tbody>
-
-
-
   </table>
 </div>

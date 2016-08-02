@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "form" %>
 
 <div class="container-contact">
-  <h3 class="form-title">Nouveau contact :</h3>
+  <h3 class="form-title">Ajouter un contact :</h3>
   <%=  form_for @contact, :as => :contact, :url => contacts_path(@new_contact), :html => {:multipart => true} do |f| %>
     <%= render "components/contact_form", f: f%>
   <% end %>

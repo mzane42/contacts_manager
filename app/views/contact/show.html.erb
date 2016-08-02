@@ -45,11 +45,6 @@
     <div class="export-btn-wrapper">
       <%= link_to '/contacts/'+ @contact.id.to_s+'.pdf', :class => "btn btn-primary" do %>
           <span class="glyphicon glyphicon-export"> Exporter en pdf </span>
-      <% end %>      <%= link_to '/contacts/'+ @contact.id.to_s+'/edit', :class => "btn btn-warning" do %>
-          <span class="glyphicon glyphicon-edit"> Editer </span>
-      <% end %>
-      <%= link_to '/contacts/'+ @contact.id.to_s ,method: :delete, :class => "btn btn-danger" do %>
-          <span class="glyphicon glyphicon-remove"> Supprimer </span>
       <% end %>
     </div>
 
