@@ -1,4 +1,4 @@
-In this Rails project, I created a contact manager. 
+In this simple Ruby On Rails project, I created a contact manager. 
 
 The app include the following: 
 
