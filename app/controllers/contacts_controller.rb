@@ -1,14 +1,6 @@
 class ContactsController < ApplicationController
  # margin-top on pdf
   prawnto :prawn => { :top_margin => 75 }
-=begin
-  contacts_new GET    /contacts/new(.:format)             contacts#new
-  contacts POST   /contacts(.:format)                 contacts#create
-             GET    /contacts/:id/edit(.:format)        contacts#edit
-  PATCH  /contacts/:id(.:format)             contacts#update
-  PATCH  /contacts/:id/change_flag(.:format) contacts#change_flag
-  DELETE /contacts/:id(.:format)             contacts#delete
-=end
 
   #  GET   '/'
   def index
