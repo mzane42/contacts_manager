@@ -1,6 +1,21 @@
-In this Rails project, I’ll create a contact manager. The app include the following: 
+In this simple Ruby On Rails project, I created a contact manager. 
 
--CRUD(Create, read, update and delete) contacts. 
--Upload photos for contacts. 
--Flag a contact. 
--Export contact on pdf
+The app include the following: 
+
+- CRUD (Create, read, update and delete). 
+
+- Upload photos for contacts. 
+
+- Tag a contact. 
+
+- Export contact as pdf
+
+To get started:
+
+1 - Run the command 'bundle install'. to make sure all the gems (libraries) used by the app are in place.
+
+2 - Run 'bundle exec rake db:setup' to create the initial database. (bundle exec rake db:migrate)
+
+3 - Run 'rails server'. 
+
+4 - Copy/Paste 'localhost:3000' to your browser to interact with the running app.
