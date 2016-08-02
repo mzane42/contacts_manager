@@ -28,7 +28,11 @@
     %>
     <tr>
         <td class="text-center">
-          <img src="user-default-S.png"/>
+          <% if contact.image_url.present? %>
+              <%= image_tag contact.image_url.to_s, :class => "image-contact-S" %>
+          <% else %>
+              <img class="image-contact-S" src="user-default-XL.png"/>
+          <% end %>
         </td>
         <td><%= contact.first_name %></td>
         <td> <%= contact.last_name %> </td>
